@@ -11,6 +11,7 @@ import HomeView                 from 'containers/HomeView'
 import Header                   from './components/Header'
 import Footer                   from './components/Footer'
 
+
 import './styles.scss' // global styles
 
 class App extends Component {

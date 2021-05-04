@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
 import Web3 from 'web3'
-// import 'bootstrap/dist/css/bootstrap.min.css'
+
+import Jumbotron from 'react-bootstrap/Jumbotron'
+import Container from 'react-bootstrap/Container'
+import Card from 'react-bootstrap/Card'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
 
 class HomeView extends Component {
   constructor(props) {
@@ -31,31 +37,80 @@ class HomeView extends Component {
 
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="card">
-            <h1>hello world</h1>
-            <div className="card-body">
-              Welcome to React DApp Boilerplate!
-              <p>Your account: {this.state.account}</p>
-              <p>Your balance: {this.state.balance}</p>
-              <p>Your chain:  {this.state.chain}</p>
-            </div>
+      <Jumbotron>
+        <Container>
+          <Row>
+            <Col>
+              <Card style={{ width: '24rem' }}>
+                <Card.Body>
+                  <Card.Title >Account info </Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                  <Card.Text>
+                    <p>Your account: {this.state.account}</p>
+                    <p>Your balance: {this.state.balance}</p>
+                    <p>Your chain:  {this.state.chain}</p>
+                  </Card.Text>
+                  <Card.Link href="#">Card Link</Card.Link>
 
-          </div>
-          <div className="card">
-            <h1>hello world</h1>
-            Welcome to React DApp Boilerplate!
-            <p>Your account: {this.state.account}</p>
-            <p>Your balance: {this.state.balance}</p>
-            <p>Your chain:  {this.state.chain}</p>
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card style={{ width: '24rem' }}>
+                <Card.Body>
+                  <Card.Title>eShare</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                  <Card.Text>
+                    <p>Your account: {this.state.account}</p>
+                    <p>Your balance: {this.state.balance}</p>
+                    <p>Your chain:  {this.state.chain}</p>
+                  </Card.Text>
+                  <Card.Link href="#">Card Link</Card.Link>
 
-          </div>
+                </Card.Body>
+              </Card>
 
-        </div>
+            </Col>
+          </Row>
+          <hr />
+          <Row>
+            <Col>
+              <Card style={{ width: '24rem' }}>
+                <Card.Body>
+                  <Card.Title>FTX </Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                  <Card.Text>
+                    <p>Your account: {this.state.account}</p>
+                    <p>Your balance: {this.state.balance}</p>
+                    <p>Your chain:  {this.state.chain}</p>
+                  </Card.Text>
+                  <Card.Link href="#">Card Link</Card.Link>
+
+                </Card.Body>
+              </Card>
+            </Col>
+            <Col>
+              <Card style={{ width: '24rem' }}>
+                <Card.Body>
+                  <Card.Title>USDT</Card.Title>
+                  <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
+                  <Card.Text>
+                    <p>Your account: {this.state.account}</p>
+                    <p>Your balance: {this.state.balance}</p>
+                    <p>Your chain:  {this.state.chain}</p>
+                  </Card.Text>
+                  <Card.Link href="#">Card Link</Card.Link>
+
+                </Card.Body>
+              </Card>
+
+            </Col>
+          </Row>
+        </Container>
 
 
-      </div>
+      </Jumbotron>
+
     )
   }
 }
