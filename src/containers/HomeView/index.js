@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container'
 import Card from 'react-bootstrap/Card'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Button from 'react-bootstrap/Button'
 
 
 class HomeView extends Component {
@@ -38,34 +39,35 @@ class HomeView extends Component {
   render() {
     return (
       <Jumbotron>
-        <Container>
+        <Container style={{ fontFamily: "'Dancing Script', cursive" }}>
           <Row>
             <Col>
-              <Card style={{ width: '24rem' }}>
+              <Card style={{ width: '24rem', borderRadius: '10%' }}>
                 <Card.Body>
-                  <Card.Title >Account info </Card.Title>
+                  <Card.Title ><h2 >Account info</h2> </Card.Title>
+                  <hr />
                   <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
                   <Card.Text>
                     <p>Your account: {this.state.account}</p>
                     <p>Your balance: {this.state.balance}</p>
                     <p>Your chain:  {this.state.chain}</p>
                   </Card.Text>
-                  <Card.Link href="#">Card Link</Card.Link>
-
+                  <Button className="rounded-pill" >ok</Button>
                 </Card.Body>
               </Card>
             </Col>
             <Col>
-              <Card style={{ width: '24rem' }}>
+              <Card style={{ width: '24rem', borderRadius: '10%' }}>
                 <Card.Body>
-                  <Card.Title>eShare</Card.Title>
+                  <Card.Title><h2>eShare</h2></Card.Title>
+                  <hr />
                   <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
                   <Card.Text>
                     <p>Your account: {this.state.account}</p>
                     <p>Your balance: {this.state.balance}</p>
                     <p>Your chain:  {this.state.chain}</p>
                   </Card.Text>
-                  <Card.Link href="#">Card Link</Card.Link>
+                  <Button className="rounded-pill">ok</Button>
 
                 </Card.Body>
               </Card>
@@ -75,31 +77,33 @@ class HomeView extends Component {
           <hr />
           <Row>
             <Col>
-              <Card style={{ width: '24rem' }}>
+              <Card style={{ width: '24rem', borderRadius: '10%' }}>
                 <Card.Body>
-                  <Card.Title>FTX </Card.Title>
+                  <Card.Title><h2>FTX</h2></Card.Title>
+                  <hr />
                   <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
                   <Card.Text>
                     <p>Your account: {this.state.account}</p>
                     <p>Your balance: {this.state.balance}</p>
                     <p>Your chain:  {this.state.chain}</p>
                   </Card.Text>
-                  <Card.Link href="#">Card Link</Card.Link>
+                  <Button className="rounded-pill">ok </Button>
 
                 </Card.Body>
               </Card>
             </Col>
             <Col>
-              <Card style={{ width: '24rem' }}>
+              <Card style={{ width: '24rem', borderRadius: '10%' }}>
                 <Card.Body>
-                  <Card.Title>USDT</Card.Title>
+                  <Card.Title><h2>USDT</h2></Card.Title>
+                  <hr />
                   <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
                   <Card.Text>
                     <p>Your account: {this.state.account}</p>
                     <p>Your balance: {this.state.balance}</p>
                     <p>Your chain:  {this.state.chain}</p>
                   </Card.Text>
-                  <Card.Link href="#">Card Link</Card.Link>
+                  <Button className="rounded-pill">ok</Button>
 
                 </Card.Body>
               </Card>

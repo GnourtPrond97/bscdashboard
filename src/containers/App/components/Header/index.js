@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import PropTypes            from 'prop-types'
 import { withRouter }       from 'react-router-dom'
+import { Button } from 'react-bootstrap'
+
 import AppBar               from 'components/AppBar'
 import Typography           from 'components/Typography'
 import Toolbar              from '@material-ui/core/Toolbar'
-import IconButton           from '@material-ui/core/IconButton'
+// import IconButton           from '@material-ui/core/IconButton'
 import Menu                 from '@material-ui/core/Menu'
 import MenuItem             from '@material-ui/core/MenuItem'
 // import AccountCircle        from '@material-ui/icons/AccountCircle'
@@ -25,16 +27,17 @@ class Header extends Component {
 
     return (
       <div>
-        <IconButton
-          aria-haspopup="true"
-          color="inherit"
-          className="dropdown"
-          aria-owns={anchorEl ? 'simple-menu' : null}
-          onClick={this.handleClick}
-        >
-          {/* <AccountCircle /> */}
-          Connect
-        </IconButton>
+        {/* <IconButton */}
+        {/*  aria-haspopup="true" */}
+        {/*  color="inherit" */}
+        {/*  className="dropdown" */}
+        {/*  aria-owns={anchorEl ? 'simple-menu' : null} */}
+        {/*  onClick={this.handleClick} */}
+        {/* > */}
+        {/*   <AccountCircle /> */}
+
+        {/* </IconButton> */}
+        <Button className="btn-outline-light rounded-pill" >Connect</Button>
         <Menu
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
