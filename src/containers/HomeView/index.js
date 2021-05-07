@@ -13,9 +13,11 @@ import { styles }           from './styles.scss'
 class HomeView extends Component {
   constructor(props) {
     super(props)
-    this.state = { account: '' }
-    this.state = { balance: '' }
-    this.state = { chain: '' }
+    this.state = {
+      account: '',
+      balance: '',
+      chain: ''
+    }
   }
   componentWillMount() {
     this.loadBlockchainData()

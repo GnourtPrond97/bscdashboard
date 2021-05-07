@@ -68,8 +68,8 @@ class LeftMenu extends Component {
                 </a>
               </li>
               <li>
-                <a href="/">
-                  <span className="" />
+                <a href="/#/form">
+                  <span className="fa fa-envelope" />Verify email
                 </a>
               </li>
               <li>

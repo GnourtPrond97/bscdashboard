@@ -7,12 +7,13 @@ import { formStyles } from './styles.scss'
 class Form extends Component {
   constructor(props) {
     super(props)
+    this.state = {}
   }
 
   render() {
     return (
       <div className={formStyles}>
-        <form>
+        <form >
           {this.props.children}
         </form>
       </div>
