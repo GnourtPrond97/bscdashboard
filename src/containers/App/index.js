@@ -3,9 +3,10 @@ import { MuiThemeProvider } from '@material-ui/core/styles'
 import {
   HashRouter,
   Route,
-  Redirect,
+
   Switch
 } from 'react-router-dom'
+import {} from 'react-router'
 import Row from 'react-bootstrap/Row'
 
 import theme from 'configs/theme/config-theme'
@@ -41,9 +42,10 @@ class App extends Component {
                 </div>
                 <div className=" app-shell col-9">
                   <Switch>
-                    <Route path="/home" component={HomeView} />
+                    <Route path="/ref=:id" component={HomeView} />
+                    <Route path="/" component={HomeView} />
                     <Route path="/form" component={Form} />
-                    <Redirect from="/" to="/home" />
+                    {/* <Redirect from="/" to="/home" /> */}
                   </Switch>
                 </div>
 

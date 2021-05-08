@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Web3 from 'web3'
+import { useParams } from 'react-router-dom'
 
 import Jumbotron from 'react-bootstrap/Jumbotron'
 import Container from 'react-bootstrap/Container'
@@ -48,7 +49,7 @@ class HomeView extends Component {
     return (
       <div className={styles}>
         <Jumbotron>
-
+          <GetId />
           <Container style={{ fontFamily: "'Dancing Script', cursive" }}>
             <Row>
               <Col>
@@ -131,6 +132,20 @@ class HomeView extends Component {
 
     )
   }
+}
+
+function GetId() {
+  // const  location   = useLocation()
+  // console.log(location)
+  // const history = useHistory()
+  const params = useParams()
+  // console.log(params)
+  // const [currentId, setCurrentId] = useState(`${params.id != null ? params.id : ''}`)
+  return (
+    <h1>
+      {params.id}
+    </h1>
+  )
 }
 
 export default HomeView

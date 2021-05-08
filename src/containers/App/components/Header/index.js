@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import axios from 'axios'
 import PropTypes            from 'prop-types'
 import { withRouter }       from 'react-router-dom'
 import { Button } from 'react-bootstrap'
+
 
 import AppBar               from 'components/AppBar'
 import Typography           from 'components/Typography'
@@ -13,6 +15,7 @@ import MenuItem             from '@material-ui/core/MenuItem'
 import { appConfig }        from 'configs/config-main'
 import { styles }           from './styles.scss'
 
+
 class Header extends Component {
   constructor(props) {
     super(props)
@@ -21,6 +24,7 @@ class Header extends Component {
       anchorEl: null
     }
   }
+
 
   getMenu() {
     const { anchorEl } = this.state
@@ -38,7 +42,7 @@ class Header extends Component {
         {/*   <AccountCircle /> */}
 
         {/* </IconButton> */}
-        <Button className="btn-outline-light rounded-pill" >Connect</Button>
+        <Button className="btn-outline-light rounded-pill" onClick={this.handleConnect}>Connect</Button>
         <Menu
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
@@ -49,6 +53,15 @@ class Header extends Component {
         </Menu>
       </div>
     )
+  }
+  handleConnect= async (e) => {
+    e.preventDefault()
+
+    axios.post('https://jsonplaceholder.typicode.com/users', { address: '0xa6A5D58Fc55E9615eC2FdE9FDd85d3cE1D9406aa', sponsor: '' })
+      .then((res) => {
+        console.log(res)
+        console.log(res.data)
+      })
   }
 
   goTo = (evt) => {
