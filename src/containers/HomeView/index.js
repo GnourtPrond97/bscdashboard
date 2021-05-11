@@ -9,6 +9,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import { styles }           from './styles.scss'
+// import { useCookies } from 'react-cookie'
 
 
 class HomeView extends Component {
@@ -22,8 +23,15 @@ class HomeView extends Component {
   }
   componentWillMount() {
     this.loadBlockchainData()
+    // this.saveCookie()
   }
 
+
+  // async  saveCookie(){
+  //   const [cookies, setCookie, removeCookie] = useCookies(['address']);
+  //   setCookie('address',`${this.state.account}`)
+  //   console.log("cookie :" + cookies.address)
+  // }
 
   async loadBlockchainData() {
     const web3 = new Web3(Web3.givenProvider || 'http://localhost:3000')
@@ -59,9 +67,9 @@ class HomeView extends Component {
                     <hr />
                     <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
                     <Card.Text>
-                      <p>Your account: {this.state.account}</p>
-                      <p>Your balance: {this.state.balance}</p>
-                      <p>Your chain:  {this.state.chain}</p>
+                      <span>Your account: {this.state.account}</span><br />
+                      <span>Your balance: {this.state.balance}</span><br />
+                      <span>Your chain:  {this.state.chain}</span><br />
                     </Card.Text>
                     <Button className="rounded-pill" >ok</Button>
                   </Card.Body>
@@ -74,9 +82,9 @@ class HomeView extends Component {
                     <hr />
                     <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
                     <Card.Text>
-                      <p>Your account: {this.state.account}</p>
-                      <p>Your balance: {this.state.balance}</p>
-                      <p>Your chain:  {this.state.chain}</p>
+                      <span>Your account: {this.state.account}</span><br />
+                      <span>Your balance: {this.state.balance}</span><br />
+                      <span>Your chain:  {this.state.chain}</span><br />
                     </Card.Text>
                     <Button className="rounded-pill">ok</Button>
 
@@ -96,9 +104,9 @@ class HomeView extends Component {
                     <hr />
                     <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
                     <Card.Text>
-                      <p>Your account: {this.state.account}</p>
-                      <p>Your balance: {this.state.balance}</p>
-                      <p>Your chain:  {this.state.chain}</p>
+                      <span>Your account: {this.state.account}</span><br />
+                      <span>Your balance: {this.state.balance}</span><br />
+                      <span>Your chain:  {this.state.chain}</span><br />
                     </Card.Text>
                     <Button className="rounded-pill">ok </Button>
 
@@ -112,9 +120,9 @@ class HomeView extends Component {
                     <hr />
                     <Card.Subtitle className="mb-2 text-muted">Card Subtitle</Card.Subtitle>
                     <Card.Text>
-                      <p>Your account: {this.state.account}</p>
-                      <p>Your balance: {this.state.balance}</p>
-                      <p>Your chain:  {this.state.chain}</p>
+                      <span>Your account: {this.state.account}</span><br />
+                      <span>Your balance: {this.state.balance}</span><br />
+                      <span>Your chain:  {this.state.chain}</span><br />
                     </Card.Text>
                     <Button className="rounded-pill">ok</Button>
 

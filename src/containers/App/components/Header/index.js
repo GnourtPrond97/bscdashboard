@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import PropTypes            from 'prop-types'
-import { withRouter }       from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+// import PropTypes            from 'prop-types'
+// import { useCookies } from 'react-cookie'
+import Web3 from 'web3'
 import { Button } from 'react-bootstrap'
 
 
@@ -15,6 +17,20 @@ import MenuItem             from '@material-ui/core/MenuItem'
 import { appConfig }        from 'configs/config-main'
 import { styles }           from './styles.scss'
 
+
+function GetId() {
+  // const  location   = useLocation()
+  // console.log(location)
+  // const history = useHistory()
+  const params = useParams()
+  // console.log(params)
+  // const [currentId, setCurrentId] = useState(`${params.id != null ? params.id : ''}`)
+  return (
+    <p>
+      {params.id}
+    </p>
+  )
+}
 
 class Header extends Component {
   constructor(props) {
@@ -42,27 +58,45 @@ class Header extends Component {
         {/*   <AccountCircle /> */}
 
         {/* </IconButton> */}
-        <Button className="btn-outline-light rounded-pill" onClick={this.handleConnect}>Connect</Button>
+        <GetId />
+        <Button className="btn-outline-light rounded-pill" onClick={this.handleConnect}> Connect  </Button>
         <Menu
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
           onClose={this.close}
         >
-          <MenuItem data-link="account" onClick={this.goTo}>Option 1</MenuItem>
+          <MenuItem data-link="account" onClick={this.goTo}>Option 1 </MenuItem>
           <MenuItem data-link="settings" onClick={this.goTo}> Option 2</MenuItem>
         </Menu>
       </div>
     )
   }
+  // async saveCookie(){
+  //   const params = useParams();
+  //   const [cookies, setCookie, removeCookie] = useCookies(['address']);
+  //   setCookie('address',params.id)
+  //   console.log("cookie header :" + cookies.address)
+  // }
+
   handleConnect= async (e) => {
     e.preventDefault()
+    this.props.setWeb3(new Web3(Web3.givenProvider || 'http://localhost:3000'))
+    // let web3 = new Web3("https://ropsten.infura.io/v3/ce8e130db56748dba7af3ebd7fbe4430")
+    // this.saveCookie()
 
-    axios.post('https://jsonplaceholder.typicode.com/users', { address: '0xa6A5D58Fc55E9615eC2FdE9FDd85d3cE1D9406aa', sponsor: '' })
+    const accounts = await this.props.web3.eth.getAccounts()
+    console.log(accounts[0])
+    // this.props.setCookie('address',accounts[0])
+    this.props.setCookie('address', accounts[0])
+    // console.log("cookie :" + this.props.cookies.address)
+    axios.post('https://jsonplaceholder.typicode.com/users', { address: '0xa6A5D58Fc55E9615eC2FdE9FDd85d3cE1D9406aa', sponsor: accounts[0] })
       .then((res) => {
         console.log(res)
         console.log(res.data)
       })
+    this.props.setConnect(true)
   }
+
 
   goTo = (evt) => {
     const { history } = this.props
@@ -98,10 +132,10 @@ class Header extends Component {
   }
 }
 
-Header.propTypes = {
-  history: PropTypes.shape({
-    push: PropTypes.string.isRequired
-  }).isRequired
-}
+// Header.propTypes = {
+//   history: PropTypes.shape({
+//     push: PropTypes.string.isRequired
+//   }).isRequired
+// }
 
-export default withRouter(Header)
+export default Header
