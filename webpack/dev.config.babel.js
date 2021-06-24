@@ -33,7 +33,8 @@ module.exports = {
               path.join(__dirname, '..', '/src/configs')
             ]
           }
-        }
+        },
+
       ]
     }]
   },
@@ -52,3 +53,14 @@ module.exports = {
     })
   ]
 }
+
+// module.exports = {
+//   module: {
+//     rules: [
+//       {
+//         test: /\.css$/,
+//         use: [ 'style-loader', 'css-loader' ]
+//       }
+//     ]
+//   }
+// }

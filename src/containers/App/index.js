@@ -29,7 +29,7 @@ function App() {
   const [web3, setWeb3] = useState({})
 
 
-  const [connect, setConnect] = useState()
+  const [connect, setConnect] = useState(false)
 
 
   return (
