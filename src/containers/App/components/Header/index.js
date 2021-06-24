@@ -98,13 +98,13 @@ class Header extends Component {
   }
 
 
-  goTo = (evt) => {
-    const { history } = this.props
-    const { link } = evt.currentTarget.dataset
-
-    history.push(link)
-    this.close()
-  }
+  // goTo = (evt) => {
+  //   const { history } = this.props
+  //   const { link } = evt.currentTarget.dataset
+  //
+  //   history.push(link)
+  //   this.close()
+  // }
 
   handleClick = (event) => {
     this.setState({ anchorEl: event.currentTarget })

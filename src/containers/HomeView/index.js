@@ -9,6 +9,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import { styles }           from './styles.scss'
+import { logger } from 'redux-logger/src'
 // import { useCookies } from 'react-cookie'
 
 

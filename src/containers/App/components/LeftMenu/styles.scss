@@ -1,178 +1,69 @@
 :local(.styles) {
 
-
-    position: fixed;
-    margin-top: 70px;
-    min-width: 380px;
-    max-width: 380px;
-    background: #3e64ff;
-    color: #fff;
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all 0.3s;
-    height: auto;
-    &.active {
-      min-width: 80px;
-      max-width: 80px;
-      text-align: center;
-
-      ul.components li {
-        font-size: 14px;
-
-        a {
-          padding: 10px 0;
-
-          span {
-            margin-right: 0;
-            display: block;
-            font-size: 24px;
-          }
-        }
-      }
-
-      .logo {
-        padding: 10px 0;
-      }
-
-      .footer {
-        display: none;
-      }
-    }
-
-    .logo {
-      display: block;
-      color: #fff;
-      font-weight: 900;
-      padding: 10px 30px;
-      -webkit-transition: .3s;
-      -o-transition: .3s;
-      transition: 0.3s;
-    }
-
-    ul {
-      &.components {
-        padding: 0;
-        -webkit-transition: .3s;
-        -o-transition: .3s;
-        transition: 0.3s;
-      }
-
-      li {
-        font-size: 16px;
-
-        > ul {
-          margin-left: 10px;
-
-          li {
-            font-size: 14px;
-          }
-        }
-
-        a {
-          padding: 10px 30px;
-          display: block;
-          color: #fff;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-
-          span {
-            margin-right: 15px;
-          }
-
-          &:hover {
-            color: #fff;
-          }
-        }
-
-        &.active > a {
-          background: 0 0;
-          color: #fff;
-        }
-      }
-    }
-
-
-  @media (prefers-reduced-motion: reduce) {
-    .logo {
-      -webkit-transition: none;
-      -o-transition: none;
-      transition: none;
-    }
+  #body-row {
+    margin-left:0;
+    margin-right:0;
   }
-
-  @media (prefers-reduced-motion: reduce) {
-    ul.components {
-      -webkit-transition: none;
-      -o-transition: none;
-      transition: none;
-    }
-  }
-
-  @media (max-width: 991.98px) {
-    ul li a span {
-      display: block;
-    }
-  }
-
-  @media (max-width: 991.98px) {
-      min-width: 80px;
-      max-width: 80px;
-      text-align: center;
-      margin-left: -80px !important;
-
-      &.active {
-        margin-left: 0 !important;
-      }
-
-  }
-
-  a[data-toggle=collapse] {
-    position: relative;
-  }
-
-  .dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-  }
-
-  @media (max-width: 991.98px) {
-    #sidebarCollapse span {
-      display: none;
-    }
-  }
-
-  .footer {
-    padding: 0 30px
-  }
-
-  @media (max-width: 991.98px) {
-    .footer {
-      display: none
-    }
-  }
-
-  #content {
-    width: 100%;
-    padding: 0;
+  #sidebar-container {
     min-height: 100vh;
-    -webkit-transition: all .3s;
-    -o-transition: all .3s;
-    transition: all .3s
+    background-color: #333;
+    padding: 0;
   }
 
-  .btn.btn-primary {
-    background: #3e64ff;
-    border-color: #3e64ff
+  /* Sidebar sizes when expanded and expanded */
+  .sidebar-expanded {
+    width: 230px;
+  }
+  .sidebar-collapsed {
+    width: 60px;
   }
 
-  .btn.btn-primary:hover, .btn.btn-primary:focus {
-    background: #3e64ff !important;
-    border-color: #3e64ff !important
+  /* Menu item*/
+  #sidebar-container .list-group a {
+    height: 50px;
+    color: white;
   }
+
+  /* Submenu item*/
+  #sidebar-container .list-group .sidebar-submenu a {
+    height: 45px;
+    padding-left: 30px;
+  }
+  .sidebar-submenu {
+    font-size: 0.9rem;
+  }
+
+  /* Separators */
+  .sidebar-separator-title {
+    background-color: #333;
+    height: 35px;
+  }
+  .sidebar-separator {
+    background-color: #333;
+    height: 25px;
+  }
+  .logo-separator {
+    background-color: #333;
+    height: 60px;
+  }
+
+  /* Closed submenu icon */
+  #sidebar-container .list-group .list-group-item[aria-expanded="false"] .submenu-icon::after {
+    content: " \f0d7";
+    font-family: FontAwesome;
+    display: inline;
+    text-align: right;
+    padding-left: 10px;
+  }
+  /* Opened submenu icon */
+  #sidebar-container .list-group .list-group-item[aria-expanded="true"] .submenu-icon::after {
+    content: " \f0da";
+    font-family: FontAwesome;
+    display: inline;
+    text-align: right;
+    padding-left: 10px;
+  }
+
 
 
 }
